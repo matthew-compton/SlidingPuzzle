@@ -158,6 +158,7 @@ int dimen dialog_fixed_width_major 0x7f080018
 int dimen dialog_fixed_width_minor 0x7f080019
 int dimen padding 0x7f08001a
 int dimen text_size 0x7f08001b
+int dimen text_size_large 0x7f08001c
 int drawable abc_ab_bottom_solid_dark_holo 0x7f020000
 int drawable abc_ab_bottom_solid_light_holo 0x7f020001
 int drawable abc_ab_bottom_transparent_dark_holo 0x7f020002
@@ -262,7 +263,7 @@ int id action_mode_close_button 0x7f070024
 int id activity_chooser_view_content 0x7f070025
 int id always 0x7f07000f
 int id beginning 0x7f07000a
-int id button_restart 0x7f070050
+int id button_restart 0x7f070051
 int id card0 0x7f07003e
 int id card1 0x7f070040
 int id card2 0x7f070042
@@ -282,6 +283,7 @@ int id edit_query 0x7f070030
 int id end 0x7f07000c
 int id expand_activities_button 0x7f070026
 int id expanded_menu 0x7f07002c
+int id grid 0x7f07003d
 int id home 0x7f070017
 int id homeAsUp 0x7f070005
 int id icon 0x7f07002a
@@ -323,7 +325,7 @@ int id split_action_bar 0x7f07001e
 int id submit_area 0x7f070039
 int id tabMode 0x7f070002
 int id text_moves 0x7f07003c
-int id text_victory 0x7f07003d
+int id text_victory 0x7f070050
 int id title 0x7f07002b
 int id top_action_bar 0x7f070020
 int id up 0x7f070021

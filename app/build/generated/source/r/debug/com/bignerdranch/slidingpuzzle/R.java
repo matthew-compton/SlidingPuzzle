@@ -868,6 +868,7 @@ containing a value of this type.
         public static final int dialog_fixed_width_minor=0x7f080019;
         public static final int padding=0x7f08001a;
         public static final int text_size=0x7f08001b;
+        public static final int text_size_large=0x7f08001c;
     }
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;
@@ -976,7 +977,7 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int always=0x7f07000f;
         public static final int beginning=0x7f07000a;
-        public static final int button_restart=0x7f070050;
+        public static final int button_restart=0x7f070051;
         public static final int card0=0x7f07003e;
         public static final int card1=0x7f070040;
         public static final int card2=0x7f070042;
@@ -996,6 +997,7 @@ containing a value of this type.
         public static final int end=0x7f07000c;
         public static final int expand_activities_button=0x7f070026;
         public static final int expanded_menu=0x7f07002c;
+        public static final int grid=0x7f07003d;
         public static final int home=0x7f070017;
         public static final int homeAsUp=0x7f070005;
         public static final int icon=0x7f07002a;
@@ -1037,7 +1039,7 @@ containing a value of this type.
         public static final int submit_area=0x7f070039;
         public static final int tabMode=0x7f070002;
         public static final int text_moves=0x7f07003c;
-        public static final int text_victory=0x7f07003d;
+        public static final int text_victory=0x7f070050;
         public static final int title=0x7f07002b;
         public static final int top_action_bar=0x7f070020;
         public static final int up=0x7f070021;

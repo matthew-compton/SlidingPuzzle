@@ -552,7 +552,8 @@
     <eat-comment />
 
     <dimen name="padding">4dp</dimen>
-    <dimen name="text_size">20dp</dimen>
+    <dimen name="text_size">30dp</dimen>
+    <dimen name="text_size_large">40dp</dimen>
     <!-- From: file:/Users/ambergleam/Code/workspace-studio/SlidingPuzzle/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0-rc1/res/values/values.xml -->
     <eat-comment />
 
@@ -582,13 +583,13 @@
     <eat-comment />
 
     <string name="app_name">Sliding Puzzle</string>
-    <string name="moves">Moves: %1$s</string>
+    <string name="moves">Moves:\n%1$s</string>
     <string name="restart">Restart</string>
     <string name="victory">Victory!</string>
     <!-- From: file:/Users/ambergleam/Code/workspace-studio/SlidingPuzzle/app/src/main/res/values/styles.xml -->
     <eat-comment />
 
-    <style name="AppTheme" parent="android:Theme.Material">
+    <style name="AppTheme" parent="android:Theme.Material.Light">
         <!-- Customize your theme here. -->
     </style>
     <!-- From: file:/Users/ambergleam/Code/workspace-studio/SlidingPuzzle/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.0-rc1/res/values/values.xml -->

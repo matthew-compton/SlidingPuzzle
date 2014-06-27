@@ -13,19 +13,12 @@
         android:layout_height="wrap_content"
         android:text="@string/moves"
         android:textSize="@dimen/text_size"
+        android:gravity="center"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/text_victory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/victory"
-        android:textSize="@dimen/text_size"
-        android:layout_below="@id/text_moves"
-        android:layout_centerHorizontal="true" />
-
     <LinearLayout
+        android:id="@+id/grid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -33,8 +26,8 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:elevation="5dp"
-        android:background="@android:color/holo_blue_dark">
+        android:elevation="50dp"
+        android:background="@android:color/holo_blue_light">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -206,14 +199,25 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_restart"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/text_victory"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/restart"
-        android:textColor="@android:color/black"
+        android:text="@string/victory"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        android:layout_above="@+id/button_restart"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="@dimen/activity_vertical_margin" />
+
+    <Button
+        android:id="@id/button_restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="5dp"
+        android:text="@string/restart"
         android:layout_alignParentBottom="true"
-        style="@style/AppTheme" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout><!-- From: file:/Users/ambergleam/Code/workspace-studio/SlidingPuzzle/app/src/main/res/layout/activity_puzzle.xml -->

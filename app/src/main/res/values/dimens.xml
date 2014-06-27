@@ -6,6 +6,7 @@
 
     <!-- Other dimensions -->
     <dimen name="padding">4dp</dimen>
-    <dimen name="text_size">20dp</dimen>
+    <dimen name="text_size">30dp</dimen>
+    <dimen name="text_size_large">40dp</dimen>
 
 </resources>
