@@ -25,15 +25,20 @@ public class BitmapSplitter {
      */
     private Bitmap[] split() {
         Bitmap[] sections = new Bitmap[9];
-        sections[0] = Bitmap.createBitmap(mOriginal, 0,                             0,                              mOriginal.getWidth() / 3,       mOriginal.getHeight() / 3);
-        sections[1] = Bitmap.createBitmap(mOriginal, mOriginal.getWidth() / 3,      0,                              2 * mOriginal.getWidth() / 3,   mOriginal.getHeight() / 3);
-        sections[2] = Bitmap.createBitmap(mOriginal, 2 * mOriginal.getWidth() / 3,  0,                              mOriginal.getWidth(),           mOriginal.getHeight() / 3);
-        sections[3] = Bitmap.createBitmap(mOriginal, 0,                             mOriginal.getHeight() / 3,      mOriginal.getWidth() / 3,       2 * mOriginal.getHeight() / 3);
-        sections[4] = Bitmap.createBitmap(mOriginal, mOriginal.getWidth() / 3,      mOriginal.getHeight() / 3,      2 * mOriginal.getWidth() / 3,   2 * mOriginal.getHeight() / 3);
-        sections[5] = Bitmap.createBitmap(mOriginal, 2 * mOriginal.getWidth() / 3,  mOriginal.getHeight() / 3,      mOriginal.getWidth(),           2 * mOriginal.getHeight() / 3);
-        sections[6] = Bitmap.createBitmap(mOriginal, 0,                             2 * mOriginal.getHeight() / 3,  mOriginal.getWidth() / 3,       mOriginal.getHeight());
-        sections[7] = Bitmap.createBitmap(mOriginal, mOriginal.getWidth() / 3,      2 * mOriginal.getHeight() / 3,  2 * mOriginal.getWidth() / 3,   mOriginal.getHeight());
-        sections[8] = Bitmap.createBitmap(mOriginal, 2 * mOriginal.getWidth() / 3,  2 * mOriginal.getHeight() / 3,  mOriginal.getWidth(),           mOriginal.getHeight());
+
+        int one_third = mOriginal.getWidth() / 3;
+        int two_third = 2 * mOriginal.getWidth() / 3;
+
+        sections[0] = Bitmap.createBitmap(mOriginal, 0, 0, one_third, one_third);
+        sections[1] = Bitmap.createBitmap(mOriginal, one_third, 0, one_third, one_third);
+        sections[2] = Bitmap.createBitmap(mOriginal, two_third, 0, one_third, one_third);
+        sections[3] = Bitmap.createBitmap(mOriginal, 0, one_third, one_third, one_third);
+        sections[4] = Bitmap.createBitmap(mOriginal, one_third, one_third, one_third, one_third);
+        sections[5] = Bitmap.createBitmap(mOriginal, two_third, one_third, one_third, one_third);
+        sections[6] = Bitmap.createBitmap(mOriginal, 0, two_third, one_third, one_third);
+        sections[7] = Bitmap.createBitmap(mOriginal, one_third, two_third, one_third, one_third);
+        sections[8] = Bitmap.createBitmap(mOriginal, two_third, two_third, one_third, one_third);
+
         return sections;
     }
 
