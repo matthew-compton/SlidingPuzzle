@@ -1,12 +1,12 @@
 apply plugin: 'android'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.1.0'
+    compileSdkVersion 'android-L'
+    buildToolsVersion '20.0.0'
     defaultConfig {
         applicationId 'com.bignerdranch.slidingpuzzle'
-        minSdkVersion 15
-        targetSdkVersion 19
+        minSdkVersion 'L'
+        targetSdkVersion 'L'
         versionCode 1
         versionName '1.0'
     }
@@ -22,4 +22,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:21.0.0-rc1'
+    compile 'com.android.support:appcompat-v7:21.0.0-rc1'
+    compile 'com.android.support:cardview-v7:21.+'
 }

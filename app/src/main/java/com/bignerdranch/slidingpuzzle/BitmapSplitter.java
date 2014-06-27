@@ -1,4 +1,4 @@
-package com.bignerdranch.slidingpuzzle.utils;
+package com.bignerdranch.slidingpuzzle;
 
 import android.graphics.Bitmap;
 

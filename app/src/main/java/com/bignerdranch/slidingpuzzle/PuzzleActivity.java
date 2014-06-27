@@ -1,71 +1,173 @@
 package com.bignerdranch.slidingpuzzle;
 
 import android.app.Activity;
-import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.widget.CardView;
+import android.view.View;
 import android.widget.ImageView;
-
-import com.bignerdranch.slidingpuzzle.utils.BitmapSplitter;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 
 public class PuzzleActivity extends Activity {
 
+    private CardView mCardView0;
+    private CardView mCardView1;
+    private CardView mCardView2;
+    private CardView mCardView3;
+    private CardView mCardView4;
+    private CardView mCardView5;
+    private CardView mCardView6;
+    private CardView mCardView7;
+    private CardView mCardView8;
+
     private Bitmap mBitmapOriginal;
     private Bitmap[] mBitmapSections;
 
-    private ImageView mImageViewOriginal;
-    private ImageView mImageViewSection1;
-    private ImageView mImageViewSection2;
-    private ImageView mImageViewSection3;
-    private ImageView mImageViewSection4;
-    private ImageView mImageViewSection5;
-    private ImageView mImageViewSection6;
-    private ImageView mImageViewSection7;
-    private ImageView mImageViewSection8;
-    private ImageView mImageViewSection9;
+    private int mEmptyPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle);
 
-        mImageViewOriginal = (ImageView) findViewById(R.id.original);
-        mImageViewSection1 = (ImageView) findViewById(R.id.section_1);
-        mImageViewSection2 = (ImageView) findViewById(R.id.section_2);
-        mImageViewSection3 = (ImageView) findViewById(R.id.section_3);
-        mImageViewSection4 = (ImageView) findViewById(R.id.section_4);
-        mImageViewSection5 = (ImageView) findViewById(R.id.section_5);
-        mImageViewSection6 = (ImageView) findViewById(R.id.section_6);
-        mImageViewSection7 = (ImageView) findViewById(R.id.section_7);
-        mImageViewSection8 = (ImageView) findViewById(R.id.section_8);
-        mImageViewSection9 = (ImageView) findViewById(R.id.section_9);
+        setupBitmaps();
+        setupImages();
+        setupCards();
+    }
 
-        mBitmapOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+    private void setupBitmaps() {
+        mBitmapOriginal = BitmapFactory.decodeResource(getResources(), R.drawable.image);
         if (mBitmapOriginal != null && mBitmapOriginal.getWidth() == mBitmapOriginal.getHeight()) {
-            Log.i("PuzzleActivity", "Image is not null.");
             BitmapSplitter splitter = new BitmapSplitter(mBitmapOriginal);
             mBitmapSections = splitter.getSections();
-            mImageViewSection1.setImageBitmap(mBitmapSections[0]);
-            mImageViewSection2.setImageBitmap(mBitmapSections[1]);
-            mImageViewSection3.setImageBitmap(mBitmapSections[2]);
-            mImageViewSection4.setImageBitmap(mBitmapSections[3]);
-            mImageViewSection5.setImageBitmap(mBitmapSections[4]);
-            mImageViewSection6.setImageBitmap(mBitmapSections[5]);
-            mImageViewSection7.setImageBitmap(mBitmapSections[6]);
-            mImageViewSection8.setImageBitmap(mBitmapSections[7]);
-            mImageViewSection9.setImageBitmap(mBitmapSections[8]);
-        } else {
-            Log.i("PuzzleActivity", "Image not square.");
         }
+        mEmptyPosition = 8;
+        mBitmapSections[mEmptyPosition] = null;
+    }
 
+    private void setupImages() {
+        ((ImageView) findViewById(R.id.image0)).setImageBitmap(mBitmapSections[0]);
+        ((ImageView) findViewById(R.id.image1)).setImageBitmap(mBitmapSections[1]);
+        ((ImageView) findViewById(R.id.image2)).setImageBitmap(mBitmapSections[2]);
+        ((ImageView) findViewById(R.id.image3)).setImageBitmap(mBitmapSections[3]);
+        ((ImageView) findViewById(R.id.image4)).setImageBitmap(mBitmapSections[4]);
+        ((ImageView) findViewById(R.id.image5)).setImageBitmap(mBitmapSections[5]);
+        ((ImageView) findViewById(R.id.image6)).setImageBitmap(mBitmapSections[6]);
+        ((ImageView) findViewById(R.id.image7)).setImageBitmap(mBitmapSections[7]);
+        ((ImageView) findViewById(R.id.image8)).setImageBitmap(mBitmapSections[8]);
+    }
+
+    private void setupCards() {
+        mCardView0 = (CardView) findViewById(R.id.card0);
+        mCardView0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swap(0);
+            }
+        });
+
+        mCardView1 = (CardView) findViewById(R.id.card1);
+        mCardView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swap(1);
+            }
+        });
+
+        mCardView2 = (CardView) findViewById(R.id.card2);
+        mCardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swap(2);
+            }
+        });
+
+        mCardView3 = (CardView) findViewById(R.id.card3);
+        mCardView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swap(3);
+            }
+        });
+
+        mCardView4 = (CardView) findViewById(R.id.card4);
+        mCardView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swap(4);
+            }
+        });
+
+        mCardView5 = (CardView) findViewById(R.id.card5);
+        mCardView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swap(5);
+            }
+        });
+
+        mCardView6 = (CardView) findViewById(R.id.card6);
+        mCardView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swap(6);
+            }
+        });
+
+        mCardView7 = (CardView) findViewById(R.id.card7);
+        mCardView7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swap(7);
+            }
+        });
+
+        mCardView8 = (CardView) findViewById(R.id.card8);
+        mCardView8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swap(8);
+            }
+        });
+
+    }
+
+    private void swap(int position) {
+        if (isAdjacentToEmpty(position)) {
+            Bitmap tmp = mBitmapSections[position];
+            mBitmapSections[position] = mBitmapSections[mEmptyPosition];
+            mBitmapSections[mEmptyPosition] = tmp;
+            mEmptyPosition = position;
+            setupImages();
+        }
+    }
+
+    private boolean isAdjacentToEmpty(int position) {
+        switch (mEmptyPosition) {
+            case 0:
+                return (position == 1 || position == 3);
+            case 1:
+                return (position == 0 || position == 2 || position == 4);
+            case 2:
+                return (position == 1 || position == 5);
+            case 3:
+                return (position == 0 || position == 4 || position == 6);
+            case 4:
+                return (position == 1 || position == 3 || position == 5 || position == 7);
+            case 5:
+                return (position == 2 || position == 4 || position == 8);
+            case 6:
+                return (position == 3 || position == 7);
+            case 7:
+                return (position == 4 || position == 6 || position == 8);
+            case 8:
+                return (position == 5 || position == 7);
+
+
+            default:
+                return false;
+        }
     }
 
 }
