@@ -552,6 +552,7 @@
     <eat-comment />
 
     <dimen name="padding">4dp</dimen>
+    <dimen name="text_size">20dp</dimen>
     <!-- From: file:/Users/ambergleam/Code/workspace-studio/SlidingPuzzle/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0-rc1/res/values/values.xml -->
     <eat-comment />
 

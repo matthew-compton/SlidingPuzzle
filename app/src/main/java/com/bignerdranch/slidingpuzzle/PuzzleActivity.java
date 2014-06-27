@@ -5,11 +5,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -31,9 +33,11 @@ public class PuzzleActivity extends Activity {
 
     private Bitmap mBitmapOriginal;
     private Bitmap[] mBitmapSections;
+    private int[] mBitmapSectionsPositions;
 
     private int mEmptyPosition;
     private int mMoveCounter;
+    private boolean started = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +63,13 @@ public class PuzzleActivity extends Activity {
         setupBitmaps();
         setupImages();
 
-        mEmptyPosition = 8;
-        mBitmapSections[mEmptyPosition] = BitmapFactory.decodeResource(getResources(), R.drawable.empty);
-
-        mMoveCounter = 0;
-        randomizeStartingBoard();
+//        randomizeStartingBoard();
 
         mMoveCounter = 0;
         mMovesTextView.setText(getString(R.string.moves, mMoveCounter));
         mVictoryTextView.setVisibility(View.INVISIBLE);
+
+        started = true;
     }
 
     private void setupBitmaps() {
@@ -76,6 +78,9 @@ public class PuzzleActivity extends Activity {
             BitmapSplitter splitter = new BitmapSplitter(mBitmapOriginal);
             mBitmapSections = splitter.getSections();
         }
+        mEmptyPosition = 8;
+        mBitmapSectionsPositions = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8};
+        mBitmapSections[mEmptyPosition] = BitmapFactory.decodeResource(getResources(), R.drawable.empty);
     }
 
     private void setupImages() {
@@ -167,16 +172,23 @@ public class PuzzleActivity extends Activity {
 
     private void swap(int position) {
         if (isAdjacentToEmpty(position)) {
-            mMoveCounter++;
-            mMovesTextView.setText(getString(R.string.moves, mMoveCounter));
 
-            Bitmap tmp = mBitmapSections[position];
+            Bitmap tmpBitmap = mBitmapSections[position];
             mBitmapSections[position] = mBitmapSections[mEmptyPosition];
-            mBitmapSections[mEmptyPosition] = tmp;
+            mBitmapSections[mEmptyPosition] = tmpBitmap;
+
+            int tmpPosition = mBitmapSectionsPositions[position];
+            mBitmapSectionsPositions[position] = mBitmapSectionsPositions[mEmptyPosition];
+            mBitmapSectionsPositions[mEmptyPosition] = tmpPosition;
+
             mEmptyPosition = position;
             setupImages();
 
-            checkForVictory();
+            if (started) {
+                mMoveCounter++;
+                mMovesTextView.setText(getString(R.string.moves, mMoveCounter));
+                checkForVictory();
+            }
         }
     }
 
@@ -213,7 +225,8 @@ public class PuzzleActivity extends Activity {
     }
 
     private void checkForVictory() {
-        if (false) {
+        Log.i("PuzzleActivity", "Array: " + mBitmapSectionsPositions[0] + ", " + mBitmapSectionsPositions[1] + ", " + mBitmapSectionsPositions[2] + ", " + mBitmapSectionsPositions[3] + ", " + mBitmapSectionsPositions[4] + ", " + mBitmapSectionsPositions[5] + ", " + mBitmapSectionsPositions[6] + ", " + mBitmapSectionsPositions[7] + ", " + mBitmapSectionsPositions[8]);
+        if (Arrays.equals(mBitmapSectionsPositions, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8})) {
             victory();
         }
     }
@@ -229,6 +242,7 @@ public class PuzzleActivity extends Activity {
         mCardView6.setOnClickListener(null);
         mCardView7.setOnClickListener(null);
         mCardView8.setOnClickListener(null);
+        started = false;
     }
 
 }
