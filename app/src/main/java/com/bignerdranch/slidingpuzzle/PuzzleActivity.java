@@ -63,7 +63,7 @@ public class PuzzleActivity extends Activity {
         setupBitmaps();
         setupImages();
 
-//        randomizeStartingBoard();
+        randomizeStartingBoard();
 
         mMoveCounter = 0;
         mMovesTextView.setText(getString(R.string.moves, mMoveCounter));
@@ -225,7 +225,6 @@ public class PuzzleActivity extends Activity {
     }
 
     private void checkForVictory() {
-        Log.i("PuzzleActivity", "Array: " + mBitmapSectionsPositions[0] + ", " + mBitmapSectionsPositions[1] + ", " + mBitmapSectionsPositions[2] + ", " + mBitmapSectionsPositions[3] + ", " + mBitmapSectionsPositions[4] + ", " + mBitmapSectionsPositions[5] + ", " + mBitmapSectionsPositions[6] + ", " + mBitmapSectionsPositions[7] + ", " + mBitmapSectionsPositions[8]);
         if (Arrays.equals(mBitmapSectionsPositions, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8})) {
             victory();
         }
