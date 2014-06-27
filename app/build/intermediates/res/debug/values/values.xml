@@ -581,6 +581,9 @@
     <eat-comment />
 
     <string name="app_name">Sliding Puzzle</string>
+    <string name="moves">Moves: %1$s</string>
+    <string name="restart">Restart</string>
+    <string name="victory">Victory!</string>
     <!-- From: file:/Users/ambergleam/Code/workspace-studio/SlidingPuzzle/app/src/main/res/values/styles.xml -->
     <eat-comment />
 

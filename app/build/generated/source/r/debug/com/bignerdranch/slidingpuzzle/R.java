@@ -956,8 +956,9 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
-        public static final int image=0x7f020058;
+        public static final int empty=0x7f020057;
+        public static final int ic_launcher=0x7f020058;
+        public static final int image=0x7f020059;
     }
     public static final class id {
         public static final int action_bar=0x7f07001c;
@@ -974,15 +975,16 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int always=0x7f07000f;
         public static final int beginning=0x7f07000a;
-        public static final int card0=0x7f07003c;
-        public static final int card1=0x7f07003e;
-        public static final int card2=0x7f070040;
-        public static final int card3=0x7f070042;
-        public static final int card4=0x7f070044;
-        public static final int card5=0x7f070046;
-        public static final int card6=0x7f070048;
-        public static final int card7=0x7f07004a;
-        public static final int card8=0x7f07004c;
+        public static final int button_restart=0x7f070050;
+        public static final int card0=0x7f07003e;
+        public static final int card1=0x7f070040;
+        public static final int card2=0x7f070042;
+        public static final int card3=0x7f070044;
+        public static final int card4=0x7f070046;
+        public static final int card5=0x7f070048;
+        public static final int card6=0x7f07004a;
+        public static final int card7=0x7f07004c;
+        public static final int card8=0x7f07004e;
         public static final int checkbox=0x7f07002d;
         public static final int collapseActionView=0x7f070011;
         public static final int default_activity_button=0x7f070028;
@@ -998,15 +1000,15 @@ containing a value of this type.
         public static final int icon=0x7f07002a;
         public static final int ifRoom=0x7f07000e;
         public static final int image=0x7f070027;
-        public static final int image0=0x7f07003d;
-        public static final int image1=0x7f07003f;
-        public static final int image2=0x7f070041;
-        public static final int image3=0x7f070043;
-        public static final int image4=0x7f070045;
-        public static final int image5=0x7f070047;
-        public static final int image6=0x7f070049;
-        public static final int image7=0x7f07004b;
-        public static final int image8=0x7f07004d;
+        public static final int image0=0x7f07003f;
+        public static final int image1=0x7f070041;
+        public static final int image2=0x7f070043;
+        public static final int image3=0x7f070045;
+        public static final int image4=0x7f070047;
+        public static final int image5=0x7f070049;
+        public static final int image6=0x7f07004b;
+        public static final int image7=0x7f07004d;
+        public static final int image8=0x7f07004f;
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070029;
         public static final int middle=0x7f07000b;
@@ -1033,6 +1035,8 @@ containing a value of this type.
         public static final int split_action_bar=0x7f07001e;
         public static final int submit_area=0x7f070039;
         public static final int tabMode=0x7f070002;
+        public static final int text_moves=0x7f07003c;
+        public static final int text_victory=0x7f07003d;
         public static final int title=0x7f07002b;
         public static final int top_action_bar=0x7f070020;
         public static final int up=0x7f070021;
@@ -1085,6 +1089,9 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with=0x7f0a000b;
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000c;
         public static final int app_name=0x7f0a000d;
+        public static final int moves=0x7f0a000e;
+        public static final int restart=0x7f0a000f;
+        public static final int victory=0x7f0a0010;
     }
     public static final class style {
         /**  Customize your theme here. 

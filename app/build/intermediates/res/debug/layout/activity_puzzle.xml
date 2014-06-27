@@ -9,6 +9,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="top">
+
+        <TextView
+            android:id="@+id/text_moves"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/moves" />
+
+        <TextView
+            android:id="@+id/text_victory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/victory" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center">
 
         <android.support.v7.widget.CardView
@@ -163,5 +183,13 @@
         </android.support.v7.widget.CardView>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button_restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/restart"
+        android:layout_gravity="bottom"
+        android:textColor="@android:color/black" />
 
 </LinearLayout><!-- From: file:/Users/ambergleam/Code/workspace-studio/SlidingPuzzle/app/src/main/res/layout/activity_puzzle.xml -->

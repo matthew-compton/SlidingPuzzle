@@ -6,10 +6,18 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.Random;
 
 
 public class PuzzleActivity extends Activity {
+
+    private TextView mMovesTextView;
+    private TextView mVictoryTextView;
+    private Button mRestartButton;
 
     private CardView mCardView0;
     private CardView mCardView1;
@@ -25,15 +33,41 @@ public class PuzzleActivity extends Activity {
     private Bitmap[] mBitmapSections;
 
     private int mEmptyPosition;
+    private int mMoveCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle);
 
+        mMovesTextView = (TextView) findViewById(R.id.text_moves);
+        mVictoryTextView = (TextView) findViewById(R.id.text_victory);
+
+        mRestartButton = (Button) findViewById(R.id.button_restart);
+        mRestartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                restart();
+            }
+        });
+
+        restart();
+    }
+
+    private void restart() {
+        setupCards();
         setupBitmaps();
         setupImages();
-        setupCards();
+
+        mEmptyPosition = 8;
+        mBitmapSections[mEmptyPosition] = BitmapFactory.decodeResource(getResources(), R.drawable.empty);
+
+        mMoveCounter = 0;
+        randomizeStartingBoard();
+
+        mMoveCounter = 0;
+        mMovesTextView.setText(getString(R.string.moves, mMoveCounter));
+        mVictoryTextView.setVisibility(View.INVISIBLE);
     }
 
     private void setupBitmaps() {
@@ -42,8 +76,6 @@ public class PuzzleActivity extends Activity {
             BitmapSplitter splitter = new BitmapSplitter(mBitmapOriginal);
             mBitmapSections = splitter.getSections();
         }
-        mEmptyPosition = 8;
-        mBitmapSections[mEmptyPosition] = null;
     }
 
     private void setupImages() {
@@ -135,11 +167,16 @@ public class PuzzleActivity extends Activity {
 
     private void swap(int position) {
         if (isAdjacentToEmpty(position)) {
+            mMoveCounter++;
+            mMovesTextView.setText(getString(R.string.moves, mMoveCounter));
+
             Bitmap tmp = mBitmapSections[position];
             mBitmapSections[position] = mBitmapSections[mEmptyPosition];
             mBitmapSections[mEmptyPosition] = tmp;
             mEmptyPosition = position;
             setupImages();
+
+            checkForVictory();
         }
     }
 
@@ -163,11 +200,35 @@ public class PuzzleActivity extends Activity {
                 return (position == 4 || position == 6 || position == 8);
             case 8:
                 return (position == 5 || position == 7);
-
-
             default:
                 return false;
         }
+    }
+
+    private void randomizeStartingBoard() {
+        Random random = new Random();
+        for (int i = 0; i < 100; i++) {
+            swap(random.nextInt(8));
+        }
+    }
+
+    private void checkForVictory() {
+        if (false) {
+            victory();
+        }
+    }
+
+    private void victory() {
+        mVictoryTextView.setVisibility(View.VISIBLE);
+        mCardView0.setOnClickListener(null);
+        mCardView1.setOnClickListener(null);
+        mCardView2.setOnClickListener(null);
+        mCardView3.setOnClickListener(null);
+        mCardView4.setOnClickListener(null);
+        mCardView5.setOnClickListener(null);
+        mCardView6.setOnClickListener(null);
+        mCardView7.setOnClickListener(null);
+        mCardView8.setOnClickListener(null);
     }
 
 }

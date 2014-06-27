@@ -2,5 +2,8 @@
 <resources>
 
     <string name="app_name">Sliding Puzzle</string>
+    <string name="restart">Restart</string>
+    <string name="victory">Victory!</string>
+    <string name="moves">Moves: %1$s</string>
 
 </resources>
