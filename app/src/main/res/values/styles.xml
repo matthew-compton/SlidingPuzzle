@@ -20,4 +20,16 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="Puzzle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:background">@android:color/holo_blue_dark</item>
+    </style>
+
 </resources>
