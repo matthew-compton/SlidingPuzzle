@@ -21,12 +21,12 @@
         android:id="@+id/grid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:padding="@dimen/grid_margin"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:elevation="50dp"
+        android:elevation="@dimen/elevation_large"
         android:background="@android:color/holo_blue_light">
 
         <LinearLayout
@@ -40,8 +40,8 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:elevation="5dp"
+                android:layout_margin="@dimen/padding"
+                android:elevation="@dimen/elevation"
                 card_view:cardCornerRadius="4dp">
 
                 <ImageView
@@ -56,8 +56,8 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:elevation="5dp"
+                android:layout_margin="@dimen/padding"
+                android:elevation="@dimen/elevation"
                 card_view:cardCornerRadius="4dp">
 
                 <ImageView
@@ -72,8 +72,8 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:elevation="5dp"
+                android:layout_margin="@dimen/padding"
+                android:elevation="@dimen/elevation"
                 card_view:cardCornerRadius="4dp">
 
                 <ImageView
@@ -96,8 +96,8 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:elevation="5dp"
+                android:layout_margin="@dimen/padding"
+                android:elevation="@dimen/elevation"
                 card_view:cardCornerRadius="4dp">
 
                 <ImageView
@@ -112,8 +112,8 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:elevation="5dp"
+                android:layout_margin="@dimen/padding"
+                android:elevation="@dimen/elevation"
                 card_view:cardCornerRadius="4dp">
 
                 <ImageView
@@ -128,8 +128,8 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:elevation="5dp"
+                android:layout_margin="@dimen/padding"
+                android:elevation="@dimen/elevation"
                 card_view:cardCornerRadius="4dp">
 
                 <ImageView
@@ -152,8 +152,8 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:elevation="5dp"
+                android:layout_margin="@dimen/padding"
+                android:elevation="@dimen/elevation"
                 card_view:cardCornerRadius="4dp">
 
                 <ImageView
@@ -168,8 +168,8 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:elevation="5dp"
+                android:layout_margin="@dimen/padding"
+                android:elevation="@dimen/elevation"
                 card_view:cardCornerRadius="4dp">
 
                 <ImageView
@@ -184,8 +184,8 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:elevation="5dp"
+                android:layout_margin="@dimen/padding"
+                android:elevation="@dimen/elevation"
                 card_view:cardCornerRadius="4dp">
 
                 <ImageView
