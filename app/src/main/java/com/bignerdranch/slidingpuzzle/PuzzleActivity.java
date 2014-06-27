@@ -1,22 +1,24 @@
 package com.bignerdranch.slidingpuzzle;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Arrays;
 import java.util.Random;
 
-
+@TargetApi(21)
 public class PuzzleActivity extends Activity {
 
+    private LinearLayout mGrid;
     private TextView mMovesTextView;
     private TextView mVictoryTextView;
     private Button mRestartButton;
@@ -39,10 +41,15 @@ public class PuzzleActivity extends Activity {
     private int mMoveCounter;
     private boolean started = false;
 
+    private float mGridElevation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle);
+
+        mGrid = (LinearLayout) findViewById(R.id.grid);
+        mGridElevation = mGrid.getElevation();
 
         mMovesTextView = (TextView) findViewById(R.id.text_moves);
         mVictoryTextView = (TextView) findViewById(R.id.text_victory);
@@ -59,6 +66,8 @@ public class PuzzleActivity extends Activity {
     }
 
     private void restart() {
+        mGrid.setElevation(mGridElevation);
+
         setupCards();
         setupBitmaps();
         setupImages();
@@ -232,6 +241,7 @@ public class PuzzleActivity extends Activity {
 
     private void victory() {
         mVictoryTextView.setVisibility(View.VISIBLE);
+        mGrid.setElevation(0);
         mCardView0.setOnClickListener(null);
         mCardView1.setOnClickListener(null);
         mCardView2.setOnClickListener(null);
